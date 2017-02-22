@@ -6,6 +6,7 @@ API for `Dorset conversational interface project <https://github.com/DorsetProje
 Installation
 ============
 Install using pip:
+
 .. code-block:: bash
 
     $ pip install dorset
