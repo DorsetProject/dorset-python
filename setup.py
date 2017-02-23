@@ -13,7 +13,7 @@ setup(
     author_email='cash.costello@gmail.com',
     url='https://github.com/DorsetProject/dorset-python',
     license='Apache Software License',
-    packages=['dorset'],
+    py_modules=['dorset'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
