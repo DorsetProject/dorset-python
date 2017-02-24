@@ -1,5 +1,8 @@
 Dorset remote agent library
 ========================================
+.. image:: https://secure.travis-ci.org/DorsetProject/dorset-python.png?branch=master
+	:target: https://travis-ci.org/DorsetProject/dorset-python
+
 This library provides components for implementing the remote agent web service
 API for `Dorset conversational interface project <https://github.com/DorsetProject/dorset-framework>`_.
 
