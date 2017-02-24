@@ -233,7 +233,7 @@ class AgentResponseEncoder(json.JSONEncoder):
         if isinstance(obj, AgentResponse):
             return {'type': obj.type, 'text': obj.text, 'status': obj.status, 'payload': obj.payload}
         if isinstance(obj, ResponseType):
-            return obj.name
+            return obj.value
         if isinstance(obj, ResponseStatus):
             return {'code': int(obj.code), 'message': obj.message}
         return json.JSONEncoder.default(self, obj)

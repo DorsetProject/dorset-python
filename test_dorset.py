@@ -30,21 +30,21 @@ class TestDorset(unittest.TestCase):
         self.assertEqual('cash@example.com', request.user.email)
 
     def test_encoding_simple_text_response(self):
-        expected_json = '{"type":"TEXT","text":"this is a test","status":{"code":0,"message":"Success"},"payload":null}'
+        expected_json = '{"type":"text","text":"this is a test","status":{"code":0,"message":"Success"},"payload":null}'
         expected_response = json.loads(expected_json)
         response_json = Dorset.encode_response(text="this is a test")
         response = json.loads(response_json)
         self.assertEqual(expected_response, response)
 
     def test_encoding_status_only_response(self):
-        expected_json = '{"type":"ERROR","text":null,"status":{"code":203,"message":"Something failed when handling this request."},"payload":null}'
+        expected_json = '{"type":"error","text":null,"status":{"code":203,"message":"Something failed when handling this request."},"payload":null}'
         expected_response = json.loads(expected_json)
         response_json = Dorset.encode_response(status=ResponseStatus(ResponseCode.AGENT_INTERNAL_ERROR))
         response = json.loads(response_json)
         self.assertEqual(expected_response, response)
 
     def test_encoding_full_response(self):
-        expected_json = '{"type":"IMAGE_EMBED","text":"Here is the image","status":{"code":0,"message":"Success"},"payload":"ABCDEF"}'
+        expected_json = '{"type":"image_embed","text":"Here is the image","status":{"code":0,"message":"Success"},"payload":"ABCDEF"}'
         expected_response = json.loads(expected_json)
         response_json = Dorset.encode_response(type=ResponseType.IMAGE_EMBED, text='Here is the image', payload='ABCDEF')
         response = json.loads(response_json)
