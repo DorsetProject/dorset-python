@@ -40,12 +40,11 @@ With Flask, this will look like::
    # primary endpoint
    @app.route('/request', methods=['POST'])
    def process():
-       data = request.get_json(silent=False)
-       agent_request = Dorset.decode_request(data)
+       agent_request = Dorset.decode_request(request.data)
 
        print(agent_request.text)
 
-       return Dorset.encode_response("hello, world!")
+       return Dorset.encode_response(text="hello, world!")
 
 """
 
@@ -68,8 +67,8 @@ class Dorset(object):
 
         :param type: (optional) ResponseType instance
         :param text: (optional) Text of the response
-        :param status (optional) ResponseStatus instance
-        :param payload (optional) payload data as string
+        :param status: (optional) ResponseStatus instance
+        :param payload: (optional) payload data as string
         :returns: AgentRequest object
 
         Usage::
