@@ -14,6 +14,13 @@ Install using pip:
 
     $ pip install dorset
 
+Note that the setup requires a recent version of setuptools and pip. To upgrade:
+
+.. code-block:: bash
+
+    $ pip install --upgrade setuptools pip
+
+
 Usage
 ==============
 This library handles the encoding and decoding of requests and
