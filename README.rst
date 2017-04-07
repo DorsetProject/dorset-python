@@ -46,7 +46,7 @@ With Flask, this will look like:
    # primary endpoint
    @app.route('/request', methods=['POST'])
    def process():
-       agent_request = Dorset.decode_request(request.data)
+       agent_request = Dorset.decode_request(request.get_data(as_text=True))
 
        print(agent_request.text)
 
